@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/item_background"
+    android:layout_marginBottom="8dp">
+
+    <!-- Gambar PC dengan sudut membulat -->
+    <ImageView
+        android:id="@+id/img_pc"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/sample_pc"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"
+        android:clipToOutline="true"
+        android:outlineProvider="background" />
+
+    <!-- Nama PC Rakitan -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/img_pc"
+        android:layout_marginStart="16dp"
+        android:text="PC Rakitan"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#212121"
+    android:layout_alignParentTop="true"
+    android:shadowDx="1"
+    android:shadowDy="1"
+    android:shadowRadius="2" />
+
+    <!-- Deskripsi PC Rakitan -->
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_toEndOf="@id/img_pc"
+        android:layout_marginStart="16dp"
+        android:text="Deskripsi singkat PC Rakitan"
+        android:textColor="#757575"
+    android:textSize="14sp"
+    android:layout_marginTop="4dp"
+    android:lineSpacingExtra="2dp" />
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warna Utama -->
+    <color name="purple_500">#6200EE</color> <!-- Warna utama -->
+    <color name="purple_700">#3700B3</color> <!-- Warna utama gelap -->
+    <color name="teal_200">#03DAC5</color>  <!-- Warna sekunder -->
+
+    <!-- Warna Latar dan Teks -->
+    <color name="white">#FFFFFF</color>      <!-- Putih -->
+    <color name="black">#000000</color>      <!-- Hitam -->
+    <color name="gray_light">#E0E0E0</color> <!-- Abu-abu terang -->
+    <color name="green">#4CAF50</color>      <!-- Hijau untuk tombol "Beli Sekarang" -->
+    <color name="red">#F44336</color>        <!-- Merah -->
+    <color name="blue_light">#E3F2FD</color> <!-- Biru muda -->
+    <color name="background_color">#F5F5F5</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="divider_color">#BDBDBD</color>
+
+</resources>

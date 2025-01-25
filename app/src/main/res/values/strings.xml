@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Umum -->
+    <string name="app_name">My PC</string> <!-- Nama aplikasi -->
+    <string name="back">Kembali</string>
+
+    <!-- Halaman Splash Screen -->
+    <string name="splash_welcome">Selamat Datang di My PC!</string>
+    <string name="splash_button">Masuk</string>
+
+    <!-- Halaman Daftar -->
+    <string name="list_title">Daftar PC Rakitan</string>
+    <string name="list_description_pc_gaming">PC untuk kebutuhan gaming kelas berat.</string>
+    <string name="list_description_pc_multimedia">PC untuk desain grafis dan multimedia.</string>
+    <string name="list_description_pc_office">PC hemat daya untuk kebutuhan kantor.</string>
+
+    <!-- Halaman Detail -->
+    <string name="details_title">Detail Produk</string>
+    <string name="price_label">Harga:</string>
+    <string name="add_to_cart_button">Tambahkan ke Keranjang</string>
+    <string name="buy_now_button">Beli Sekarang</string>
+
+    <!-- Notifikasi / Pesan -->
+    <string name="added_to_cart_message">Item berhasil ditambahkan ke keranjang!</string>
+    <string name="buy_now_message">Terima kasih! Transaksi Anda berhasil.</string>
+</resources>
