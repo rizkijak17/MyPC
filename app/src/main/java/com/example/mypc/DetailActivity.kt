@@ -2,6 +2,7 @@ package com.example.mypc
 
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import android.widget.Button
 import android.widget.ImageView
@@ -30,8 +31,9 @@ class DetailActivity : AppCompatActivity() {
         val tvTitle: TextView = findViewById(R.id.tv_title)
         val tvPrice: TextView = findViewById(R.id.tv_price)
         val tvDetails: TextView = findViewById(R.id.tv_details)
-        val btnAddToCart: Button = findViewById(R.id.btn_add_to_cart)
-        val btnBuyNow: Button = findViewById(R.id.btn_buy_now)
+        val btn_chat: Button = findViewById(R.id.btn_chat)
+        val btnAddToCart: Button = findViewById(R.id.btn_cart)
+        val btnBuyNow: Button = findViewById(R.id.btn_checkout)
 
         // Ambil data dari Intent
         val pcData = intent.getSerializableExtra("PC_DATA") as? PCItem
@@ -44,43 +46,47 @@ class DetailActivity : AppCompatActivity() {
             tvDetails.text = it.details
         }
 
-        // Tombol Tambahkan ke Keranjang
-        btnAddToCart.setOnClickListener {
-            // Efek animasi saat tombol ditekan
+        // Fungsi untuk menambahkan animasi dan aksi pada tombol
+        fun applyButtonAnimation(button: Button) {
             val scaleAnim = ScaleAnimation(
                 1f, 0.9f, 1f, 0.9f,
                 ScaleAnimation.RELATIVE_TO_SELF, 0.5f,
                 ScaleAnimation.RELATIVE_TO_SELF, 0.5f
             )
             scaleAnim.duration = 100
-            scaleAnim.fillAfter = true
-            btnAddToCart.startAnimation(scaleAnim)
+            scaleAnim.fillAfter = false
+            scaleAnim.setAnimationListener(object : Animation.AnimationListener {
+                override fun onAnimationStart(animation: Animation?) {}
+                override fun onAnimationEnd(animation: Animation?) {
+                    // Reset ukuran tombol ke semula
+                    button.scaleX = 1f
+                    button.scaleY = 1f
+                }
+                override fun onAnimationRepeat(animation: Animation?) {}
+            })
+
+            // Mulai animasi
+            button.startAnimation(scaleAnim)
 
             // Tambahkan suara klik
-            val mediaPlayer = MediaPlayer.create(this, R.raw.click_sound)
+            val mediaPlayer = MediaPlayer.create(this@DetailActivity, R.raw.click_sound)
             mediaPlayer.start()
-
-            // Tambahkan ke keranjang (implementasi sesuai kebutuhan)
-            // Contoh logika: menambahkan item ke keranjang atau memberi feedback lainnya
         }
 
-        // Tombol Beli Sekarang
+        // Terapkan animasi dan logika pada setiap tombol
+        btn_chat.setOnClickListener {
+            applyButtonAnimation(btn_chat)
+            // Tambahkan logika untuk tombol chat di sini
+        }
+
+        btnAddToCart.setOnClickListener {
+            applyButtonAnimation(btnAddToCart)
+            // Tambahkan logika untuk tombol Tambahkan ke Keranjang di sini
+        }
+
         btnBuyNow.setOnClickListener {
-            // Efek animasi saat tombol ditekan
-            val scaleAnim = ScaleAnimation(
-                1f, 0.9f, 1f, 0.9f,
-                ScaleAnimation.RELATIVE_TO_SELF, 0.5f,
-                ScaleAnimation.RELATIVE_TO_SELF, 0.5f
-            )
-            scaleAnim.duration = 100
-            scaleAnim.fillAfter = true
-            btnBuyNow.startAnimation(scaleAnim)
-
-            // Tambahkan suara klik
-            val mediaPlayer = MediaPlayer.create(this, R.raw.click_sound)
-            mediaPlayer.start()
-
-            // Beli sekarang (implementasi sesuai kebutuhan)
+            applyButtonAnimation(btnBuyNow)
+            // Tambahkan logika untuk tombol Beli Sekarang di sini
         }
     }
 

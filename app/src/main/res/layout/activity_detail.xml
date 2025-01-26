@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -14,15 +14,15 @@
         android:title="Detail PC"
         android:elevation="8dp" />
 
-    <!-- Konten detail PC di bawah toolbar -->
+    <!-- Konten detail PC di atas tombol aksi -->
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_below="@id/toolbar"
+        android:layout_above="@+id/action_buttons"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- LinearLayout untuk membungkus konten -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,46 +71,71 @@
                 android:textSize="16sp"
                 android:lineSpacingExtra="4dp"
                 android:textColor="@android:color/black" />
-
-            <!-- Tombol Aksi -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="16dp">
-
-                <Button
-                    android:id="@+id/btn_add_to_cart"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:background="@drawable/rounded_button"
-                    android:text="Masukan Keranjang"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textAllCaps="false"
-                    android:layout_marginEnd="8dp" />
-
-                <Button
-                    android:id="@+id/btn_buy_now"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="12dp"
-                    android:paddingHorizontal="16dp"
-                    android:background="@drawable/rounded_button"
-                    android:text="Beli Sekarang"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textAllCaps="false"
-                    android:layout_marginStart="8dp" />
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <!-- Tombol Aksi -->
+    <LinearLayout
+        android:id="@+id/action_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:background="@color/white">
+
+        <!-- Tombol Chat -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_chat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="12dp"
+            android:backgroundTint="@color/purple_500"
+            android:elevation="4dp"
+            android:text="Chat"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:layout_marginEnd="4dp"
+            app:rippleColor="@color/purple_700" />
+
+        <!-- Tombol Cart -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="12dp"
+            android:backgroundTint="@color/purple_500"
+            android:elevation="4dp"
+            android:text="Cart"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:layout_marginEnd="4dp"
+            app:rippleColor="@color/purple_700" />
+
+        <!-- Tombol Checkout -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_checkout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="12dp"
+            android:backgroundTint="@color/purple_500"
+            android:elevation="4dp"
+            android:text="Checkout"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            app:rippleColor="@color/purple_700" />
+    </LinearLayout>
 </RelativeLayout>
